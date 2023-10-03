@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagina Principal</title>
+    <link rel="shortcut icon" th:href="@{/img/iconLogo.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{css/style_principal.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+      <!-- FRAGMENTO DO HEADER -->
+      <header th:replace="~{fragmentos/header :: header}"></header>
+
+
+       <!-- FRAGMENTO DO MAIN -->
+      <main class="containerProduction">
+        <h1 class="containerMain-h1">Produção das Linhas</h1>
+        <div class="itemProduction">
+          <div class="productLinha">
+            <table class="table table-hover">
+                <thead class="table-dark product_table_thead">
+                    <tr>
+                        <th class="product_table_thead-tr" scope="col">Modelo AE2</th>
+                        <th class="product_table_thead-tr" scope="col">Qnt. Produzir</th>
+                        <th class="product_table_thead-tr" scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <!-- Utilizando o th:each para iterar sobre a listaProducao -->
+                    <tr th:each="producao : ${listaProducaoAE}">
+                        <td class="product_table_tBody-td" th:text="${producao.item}"></td>
+                        <td class="product_table_tBody-td qntProduzir" th:text="${producao.qnt_restante}"></td>
+                        <td class="product_table_tBody-td  product_table_tBody-td-id " >
+                            <label>Produzido: </label>
+                            <input class="product_table_tBody-td-input valorProduzido" type="number" min="0">                     
+                            <button id="btnConcluir" class="btn btn-success bi bi-check-circle-fill" ></button>
+                            <button id="btnEditar" class="btn btn-warning" href="#"><i class="bi bi-brush"></i></button>
+                            <button class="btn btn-danger" href="#"><i class="bi bi-archive-fill"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        
+          <div class="productLinha">
+            <table class="table table-hover ">
+                <thead class="table-dark product_table_thead" >
+                    <tr>
+                        <th class="product_table_thead-tr" scope="col">Modelo AL</th>
+                        <th class="product_table_thead-tr" scope="col">Qnt. Produzir</th>
+                        <th class="product_table_thead-tr" scope="col">Ação</th>
+          
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <!-- Utilizando o th:each para iterar sobre a listaProducao -->
+                    <tr th:each="producao : ${listaProducaoAL}">
+                        <td class="product_table_tBody-td" th:text="${producao.item}"></td>
+                        <td class="product_table_tBody-td qntProduzir" th:text="${producao.qnt_restante}"></td>
+                        <td class="product_table_tBody-td  product_table_tBody-td-id ">
+                            <label>Produzido: </label>
+                            <input class="product_table_tBody-td-input valorProduzido" type="number" name="" min="0">                     
+                            <button id="btnConcluir" class="btn btn-success bi bi-check-circle-fill" ></button>
+                            <button id="btnEditar" class="btn btn-warning" href="#"><i class="bi bi-brush"></i></button>
+                            <button class="btn btn-danger" href="#"><i class="bi bi-archive-fill"></i></button>
+                        </td>
+                    
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+
+          <div class="productLinha" style=" height: 380px; overflow-y: auto;">
+            <table class="table table-hover ">
+                <thead class="table-dark product_table_thead">
+                    <tr>
+                        <th class="product_table_thead-tr" scope="col">Modelo AK</th>
+                        <th class="product_table_thead-tr" scope="col">Qnt. Produzir</th>
+                        <th class="product_table_thead-tr"  scope="col">Ação</th>
+                 
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <!-- Utilizando o th:each para iterar sobre a listaProducao -->
+                    <tr th:each="producao : ${listaProducaoAK}">
+                        <td class="product_table_tBody-td" th:text="${producao.item}"></td>
+                        <td class="product_table_tBody-td qntProduzir" th:text="${producao.qnt_restante}"></td>
+                        <td class="product_table_tBody-td  product_table_tBody-td-id ">
+                            <label>Produzido: </label>
+                            <input class="product_table_tBody-td-input valorProduzido" type="number" name="" min="0">                     
+                            <button id="btnConcluir" class="btn btn-success bi bi-check-circle-fill" ></button>
+                            <button id="btnEditar" class="btn btn-warning" href="#"><i class="bi bi-brush"></i></button>
+                            <button class="btn btn-danger" href="#"><i class="bi bi-archive-fill"></i></button>
+                        </td>
+                   
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+
+        </div>
+
+
+        <div class="itemProduction">
+
+          <div class="productLinha" style=" height: 380px; overflow-y: auto;">
+            <table class="table table-hover ">
+                <thead class="table-dark product_table_thead">
+                    <tr>
+                        <th class="product_table_thead-tr" scope="col">Modelo AZ</th>
+                        <th class="product_table_thead-tr" scope="col">Qnt. Produzir</th>
+                        <th class="product_table_thead-tr" scope="col">Ação</th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <!-- Utilizando o th:each para iterar sobre a listaProducao -->
+                    <tr th:each="producao : ${listaProducaoAZ}">
+                        <td class="product_table_tBody-td" th:text="${producao.item}"></td>
+                        <td class="product_table_tBody-td qntProduzir" th:text="${producao.qnt_restante}"></td>
+                        <td class="product_table_tBody-td  product_table_tBody-td-id ">
+                            <label>Produzido: </label>
+                            <input class="product_table_tBody-td-input valorProduzido" type="number" min="0">                     
+                            <button id="btnConcluir" class="btn btn-success bi bi-check-circle-fill" ></button>
+                            <button id="btnEditar" class="btn btn-warning" href="#"><i class="bi bi-brush"></i></button>
+                            <button class="btn btn-danger" href="#"><i class="bi bi-archive-fill"></i></button>
+                        </td>
+                     
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        
+          <div class="productLinha" style="height: 380px; overflow-y: auto;">
+            <table class="table table-hover ">
+                <thead class="table-dark product_table_thead">
+                    <tr>
+                        <th class="product_table_thead-tr" scope="col">Modelo TA</th>
+                        <th class="product_table_thead-tr" scope="col">Qnt. Produzir</th>
+                        <th class="product_table_thead-tr" scope="col">Ação</th>
+                    
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <!-- Utilizando o th:each para iterar sobre a listaProducao -->
+                    <tr th:each="producao : ${listaProducaoTA}">
+                        <td class="product_table_tBody-td" th:text="${producao.item}"></td>
+                        <td class="product_table_tBody-td qntProduzir" th:text="${producao.qnt_restante}"></td>
+                        <td class="product_table_tBody-td  product_table_tBody-td-id ">
+                            <label>Produzido: </label>
+                            <input class="product_table_tBody-td-input valorProduzido" type="number" min="0">                     
+                            <button id="btnConcluir" class="btn btn-success bi bi-check-circle-fill" ></button>
+                            <button id="btnEditar" class="btn btn-warning" href="#"><i class="bi bi-brush"></i></button>
+                            <button class="btn btn-danger" href="#"><i class="bi bi-archive-fill"></i></button>
+                        </td>
+                      
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+
+          <div class="productLinha" style="height: 380px; overflow-y: auto;">
+            <table class="table table-hover ">
+                <thead  class="table-dark product_table_thead" >
+                    <tr>
+                        <th class="product_table_thead-tr" scope="col">Modelo RG</th>
+                        <th class="product_table_thead-tr"scope="col">Qnt. Produzir</th>
+                        <th class="product_table_thead-tr" scope="col">Ação</th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <!-- Utilizando o th:each para iterar sobre a listaProducao -->
+                    <tr th:each="producao : ${listaProducaoRG}">
+                        <td class="product_table_tBody-td" th:text="${producao.item}"></td>
+                        <td class="product_table_tBody-td qntProduzir" th:text="${producao.qnt_restante}"></td>
+                        <td class="product_table_tBody-td  product_table_tBody-td-id ">
+                            <label>Produzido: </label>
+                            <input class="product_table_tBody-td-input valorProduzido" type="number"  min="0" >                     
+                            <button id="btnConcluir" class="btn btn-success bi bi-check-circle-fill" ></button>
+                            <button id="btnEditar" class="btn btn-warning" href="#"><i class="bi bi-brush"></i></button>
+                            <button class="btn btn-danger" href="#"><i class="bi bi-archive-fill"></i></button>
+                        </td>
+                     
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+
+        </div>
+        
+        
+      </main>
+      
+       <!-- FRAGMENTO DO HFOOTER -->
+      <!-- <footer th:replace="~{fragmentos/footer :: footer}"></footer> -->
+      <script src="js/script_principal.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
