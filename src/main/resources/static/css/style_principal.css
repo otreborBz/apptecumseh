@@ -101,28 +101,29 @@ form{
 .containerMain-h1{ 
 	display: flex;
 	width: 100%;
-	height: 5%;
+	height: auto;
 	justify-content: center;
 	align-items: center;
 	color: #428BC7;
 }
 .containerProduction{
 	width: 100%;
-	height:100vh;
+	height:auto;
+	
 	
 }
 .itemProduction{ 
 	width: 100%;
-	height: 45%;
+	height:auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 20px;
-	margin: 10px;
+	margin: 20px;
+	padding: 10px;
 }
-.productLinha{
-	width: 30%;
-	height: 90%;
+.productLinha{ 
+	width: 25%;
 	height: 380px;
 	overflow-y: auto;
 	
