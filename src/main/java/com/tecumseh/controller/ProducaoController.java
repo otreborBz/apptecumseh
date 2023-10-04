@@ -23,7 +23,7 @@ public class ProducaoController {
     @GetMapping("/")
     public ModelAndView index(){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("/index");      
+        mv.setViewName("index");      
         mv.addObject("listaProducaoRG", listaProducao("RG", "RG MONTAGEM ", 10000));
         mv.addObject("listaProducaoTA", listaProducao("TA", "TA S2 MONTAGEM ", 10000));
         mv.addObject("listaProducaoAK", listaProducao("AK/TY", "AK/TY MONTAGEM ", 10000));
